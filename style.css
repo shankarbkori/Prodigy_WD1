@@ -1,107 +1,124 @@
-/* Reset */
-* {
+/* Basic Setup */
+body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    scroll-behavior: smooth;
 }
 
-/* Navbar */
-nav {
+/* Navigation Styling */
+#navbar {
     position: fixed;
     top: 0;
     width: 100%;
-    height: 60px;
+    padding: 20px 0;
     background-color: transparent;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 30px;
-    transition: background-color 0.3s ease;
+    text-align: center;
+    transition: 0.4s;
     z-index: 1000;
 }
 
-/* Navbar after scroll */
-nav.scrolled {
-    background-color: #222;
+/* The style added by JavaScript on scroll */
+#navbar.scrolled {
+    background-color: white;
+    padding: 10px 0;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
 }
 
-/* Logo */
-.logo {
-    color: white;
-    font-size: 22px;
-    font-weight: bold;
-}
-
-/* Menu */
-.nav-links {
-    display: flex;
-    list-style: none;
-}
-
-.nav-links li a {
+#navbar a {
     color: white;
     text-decoration: none;
-    margin: 0 15px;
-    padding: 5px 10px;
-    transition: background 0.3s, color 0.3s;
+    margin: 0 20px;
+    font-weight: 600;
+    font-size: 16px;
+    transition: 0.3s;
 }
 
-/* Hover Effect */
-.nav-links li a:hover {
-    background-color: white;
-    color: #222;
-    border-radius: 5px;
+#navbar.scrolled a {
+    color: #333;
 }
 
-/* Mobile Menu */
-.menu-toggle {
-    display: none;
-    font-size: 26px;
-    color: white;
-    cursor: pointer;
+#navbar a:hover {
+    color: #ff4757;
 }
 
-/* Landing Page */
-.hero {
-    height: 100vh;
-    background: linear-gradient(to right, #4facfe, #00f2fe);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: white;
+/* Section Styling */
+.section {
+    padding: 120px 20px;
     text-align: center;
 }
 
-.content {
+#home {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800');
+    background-size: cover;
+    background-position: center;
     height: 100vh;
-    padding: 80px 40px;
-    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .nav-links {
-        position: absolute;
-        top: 60px;
-        right: 0;
-        background-color: #222;
-        flex-direction: column;
-        width: 200px;
-        display: none;
-    }
+h1 { font-size: 45px; margin-bottom: 10px; }
 
-    .nav-links.active {
-        display: flex;
-    }
+#services {
+    background-color: #f1f2f6;
+}
 
-    .nav-links li {
-        margin: 15px 0;
-        text-align: center;
-    }
+/* Beautiful Cards */
+.card {
+    background-color: white;
+    border-radius: 15px;
+    display: inline-block;
+    width: 280px;
+    margin: 15px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
 
-    .menu-toggle {
-        display: block;
-    }
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Simple Form & Buttons */
+.btn {
+    padding: 12px 30px;
+    background-color: #ff4757;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+.btn:hover {
+    background-color: #ff6b81;
+    transform: scale(1.05);
+}
+
+input, textarea {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto 15px auto;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    display: block;
+}
+
+footer {
+    background-color: #2f3542;
+    color: white;
+    padding: 40px;
+    text-align: center;
 }
